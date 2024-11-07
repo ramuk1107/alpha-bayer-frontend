@@ -4,6 +4,7 @@ import "./login-styles.css";
 import React, { useState } from "react";
 import CryptoJS from 'crypto-js';
 // import { Snackbar, Alert, Toolbar } from '@mui/material';
+import { useRouter } from "next/navigation";
 
 export type FormState = {
     email: string;
@@ -17,6 +18,7 @@ export default function login(){
         password: "",
       });
     const [errors, setErrors] = useState<{ [key in keyof FormState]?: string }>({});
+    const router = useRouter();
 
     const validateForm = (): boolean => {
         let valid = true;
@@ -64,28 +66,26 @@ export default function login(){
             
             // setFormState((prev) => ({ ...prev, 'password': hashedPassword }));
             const formData = { 'email': formState.email, 'password': hashedPassword }
+            const url = 'http://10.137.203.231:3456/api/public/auth/login'
 
-            // setTimeout(function(){
-
-            // console.log(formState, hashedPassword)
-            
-            fetch('http://10.137.203.231:3456/api/public/auth/login', {
+            fetch(url, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include', // Important: include cookies in request
                 method: 'POST',
                 body: JSON.stringify(formData),
             })
             .then((response) => response.json())
             .then((data) => {
-            // Handle server response
-            console.log(data);
+                // Handle server response
+                console.log(data);
+                router.push('/dashboard')
+                // localStorage.setItem('user_role', data['role']);
             })
             .catch((error) => {
-            console.error(error);
+                console.error(error);
             });
-            // },0)
-
             
             setFormState({
                 email: "",

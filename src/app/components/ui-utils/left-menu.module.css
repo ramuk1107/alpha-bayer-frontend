@@ -14,3 +14,18 @@
   font-weight: bold;
   unicode-bidi: isolate;
 }
+
+.menuList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.menuItemActive {
+  font-weight: bold;
+}

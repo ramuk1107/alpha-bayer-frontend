@@ -57,40 +57,45 @@ export default function login(){
     };
 
     const handleSubmit  = async(e: React.FormEvent) => {
-        e.preventDefault();
-        if (validateForm()) {
-            
-            const hashedPassword = CryptoJS.SHA256(formState.password).toString(CryptoJS.enc.Base64);
-            
-            handleChange("password", hashedPassword)
-            
-            // setFormState((prev) => ({ ...prev, 'password': hashedPassword }));
-            const formData = { 'email': formState.email, 'password': formState.password }
-            const url = 'http://10.137.203.231:3456/api/public/auth/login'
+        try {
+            e.preventDefault();
+            if (validateForm()) {
+                
+                const hashedPassword = CryptoJS.SHA256(formState.password).toString(CryptoJS.enc.Base64);
+                
+                handleChange("password", hashedPassword)
+                
+                // setFormState((prev) => ({ ...prev, 'password': hashedPassword }));
+                const formData = { 'email': formState.email, 'password': formState.password }
+                const url = 'http://10.137.203.231:3456/api/public/auth/login'
 
-            fetch(url, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                // credentials: 'include', // Important: include cookies in request
-                method: 'POST',
-                body: JSON.stringify(formData),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                // Handle server response
-                console.log(data);
-                router.push('/dashboard')
-                localStorage.setItem('user_role', data['data']['user']['role']);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-            
-            setFormState({
-                email: "",
-                password: "",
-            });
+                fetch(url, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    // credentials: 'include', // Important: include cookies in request
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    // Handle server response
+                    console.log(data);
+                    router.push('/dashboard')
+                    localStorage.setItem('token', data['token']);
+                    localStorage.setItem('user_role', data['data']['user']['role']);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+                
+                setFormState({
+                    email: "",
+                    password: "",
+                });
+            }
+        } catch (error) {
+            console.error("handleSubmit exception error:", error);
         }
     };
 

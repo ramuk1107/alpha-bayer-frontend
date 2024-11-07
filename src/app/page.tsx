@@ -10,7 +10,7 @@ const NAV_CONSTANT = [
   "About Us",
   "Contact",
 ];
-
+ 
 export default function Home() {
   return (
     <>

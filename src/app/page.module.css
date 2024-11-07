@@ -68,10 +68,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -106,6 +103,43 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
+}
+
+.headerCont {
+  background-color: var(--primary-blue);
+  text-align: center;
+  padding: 50px 0;
+}
+
+.headerCont {
+  color: #ffffff;
+}
+
+.navBg {
+  background-color: var(--primary-green);
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.navLink {
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.subTitle {
+  font-size: 2.5rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.subDesc {
+  margin-bottom: 20px;
+}
+
+.bodyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Enable hover only on non-touch devices */

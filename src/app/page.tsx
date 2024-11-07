@@ -10,7 +10,7 @@ const NAV_CONSTANT = [
   "About Us",
   "Contact",
 ];
- 
+
 export default function Home() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function Home() {
         <h1 className={classes.title}>Bayer Healthcare</h1>
         <div className={classes.navBg}>
           {NAV_CONSTANT.map((nav, index) => (
-            <Link className={classes.navLink} href={"/"}>
+            <Link key={index} className={classes.navLink} href={"/"}>
               {nav}
             </Link>
           ))}

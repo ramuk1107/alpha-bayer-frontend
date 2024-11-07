@@ -1,0 +1,16 @@
+.sidebar {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 20px;
+}
+
+.title {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}

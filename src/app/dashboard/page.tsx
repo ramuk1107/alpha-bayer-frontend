@@ -24,10 +24,10 @@ export default function Dashbaord() {
                 .then((response) => response.json())
                 .then((data) => {
                     // Handle server response
-                    // console.log("===== fetchAppointments =====",data);
+                    console.log("===== fetchAppointments =====",data);
                     const userData = data['data']
                     setUserData(userData)
-                    console.log("===== fetchAppointments =====",setUserData)
+                    // console.log("===== fetchAppointments =====",setUserData)
                 })
                 .catch((error) => {
                     console.error(error);

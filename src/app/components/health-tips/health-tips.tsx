@@ -25,7 +25,7 @@ const HEALTH_TIPS_CONSTANT = [
   },
 ];
 
-const HealthTipsComp: React.FC<{}> = () => {
+const HealthTipsComp = () => {
   return (
     <>
       <h2 className={classes.healthTopicTilte}>Featured Health Topics </h2>

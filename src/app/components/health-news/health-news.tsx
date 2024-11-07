@@ -15,7 +15,7 @@ const HEALTH_NEWS_CONSTANT = [
   },
 ];
 
-const HealthNewsComp: React.FC<{}> = ({}) => {
+const HealthNewsComponent = () => {
   return (
     <>
       <h2 className={classes.healthTopicTilte}>Latest Health News </h2>
@@ -32,4 +32,4 @@ const HealthNewsComp: React.FC<{}> = ({}) => {
   );
 };
 
-export default HealthNewsComp;
+export default HealthNewsComponent;

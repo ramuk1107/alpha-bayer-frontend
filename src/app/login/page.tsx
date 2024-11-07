@@ -66,8 +66,9 @@ export default function login(){
             
             // setFormState((prev) => ({ ...prev, 'password': hashedPassword }));
             const formData = { 'email': formState.email, 'password': hashedPassword }
-            
-            fetch('http://10.137.203.231:3456/api/public/auth/login', {
+            const url = 'http://10.137.203.231:3456/api/public/auth/login'
+
+            fetch(url, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -80,6 +81,7 @@ export default function login(){
                 // Handle server response
                 console.log(data);
                 router.push('/dashboard')
+                // localStorage.setItem('user_role', data['role']);
             })
             .catch((error) => {
                 console.error(error);

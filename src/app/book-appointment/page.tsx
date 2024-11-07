@@ -34,7 +34,7 @@ const TIME_SLOTS = ["9:00 AM", "10:00 AM", "11:00 AM"];
 export default function HealthTips() {
   const [selectedDate, setSelectedDate] = useState("");
   const handleDateClick = () => {
-    const dateInput = document.getElementById("date-input");
+    const dateInput = document.getElementById("date-input") as HTMLInputElement;
     if (dateInput) {
       dateInput.showPicker();
     }

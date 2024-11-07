@@ -4,7 +4,7 @@ import classes from "./page.module.css";
 import { time } from "console";
 import { title } from "process";
 import Image from "next/image";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const HEALTH_TIPS_CONSTANT = [
   {
@@ -40,7 +40,7 @@ export default function HealthTips() {
     }
   };
 
-  const handleDateChange = async (e) => {
+  const handleDateChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const date = e.target.value;
     setSelectedDate(date);
   };

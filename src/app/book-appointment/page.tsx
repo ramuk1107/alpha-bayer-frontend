@@ -82,7 +82,16 @@ export default function HealthTips() {
               </div>
             </div>
 
-            <div className={classes.formGroup}></div>
+            <div className={classes.formGroup}>
+              <label>Reason for Visit </label>
+              <textarea></textarea>
+            </div>
+
+            <div className={classes.formGroup}>
+              <label>Additional Notes (Optional) </label>
+              <textarea></textarea>
+            </div>
+            <button className={classes.confirmButton}>Confirm Booking</button>
           </div>
         </div>
       </div>

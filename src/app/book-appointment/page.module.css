@@ -1,0 +1,63 @@
+.centerContainer {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.formContainer label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary-blue);
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectOption {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.timeSlots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.timeSlot {
+  background-color: var(--bg-color);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.timeSlot:hover {
+  background-color: var(--primary-blue) !important;
+  color: #ffffff;
+}

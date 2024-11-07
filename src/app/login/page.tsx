@@ -65,14 +65,14 @@ export default function login(){
             handleChange("password", hashedPassword)
             
             // setFormState((prev) => ({ ...prev, 'password': hashedPassword }));
-            const formData = { 'email': formState.email, 'password': hashedPassword }
+            const formData = { 'email': formState.email, 'password': formState.password }
             const url = 'http://10.137.203.231:3456/api/public/auth/login'
 
             fetch(url, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                credentials: 'include', // Important: include cookies in request
+                // credentials: 'include', // Important: include cookies in request
                 method: 'POST',
                 body: JSON.stringify(formData),
             })
@@ -81,7 +81,7 @@ export default function login(){
                 // Handle server response
                 console.log(data);
                 router.push('/dashboard')
-                // localStorage.setItem('user_role', data['role']);
+                localStorage.setItem('user_role', data['data']['user']['role']);
             })
             .catch((error) => {
                 console.error(error);

@@ -4,7 +4,7 @@ import "./login-styles.css";
 import React, { useState } from "react";
 import CryptoJS from 'crypto-js';
 // import { Snackbar, Alert, Toolbar } from '@mui/material';
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export type FormState = {
     email: string;
@@ -79,7 +79,7 @@ export default function login(){
             .then((data) => {
                 // Handle server response
                 console.log(data);
-                // router.push('/')
+                router.push('/dashboard')
             })
             .catch((error) => {
                 console.error(error);
